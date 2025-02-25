@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting App</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Voting App</h1>
-        <button>
-            <a href="vote.html">Go to Voting Page</a>
-        </button>
+    <h1>Welcome to the Home Page</h1>
+    <form id="loginForm">
+        <label for="password">Enter Admin Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Access Admin Panel</button>
+    </form>
+    <button type="submit"><a href="vote.html">Vote here</a></button>
 
-        <button>
-            <a href="admin.html" class="admin-link" onclick="authenticateAdmin()">Admin Login</a>
-        </button>
+    <div id="errorMessage" class="error-message">Incorrect password. Access denied.</div>
 
-    </div>
-    <script src="script.js"></script>
+    <script>
+        const adminPassword = "admin123"; // Replace with your secure password
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (password === adminPassword) {
+                // Redirect to admin panel if password is correct
+                window.location.href = "admin.html";
+            } else {
+                // Show error message if password is incorrect
+                errorMessage.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
