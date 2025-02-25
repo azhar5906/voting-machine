@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +10,24 @@
         .error-message {
             color: red;
             margin-top: 10px;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
         }
     </style>
 </head>
+
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <form id="loginForm">
-        <label for="password">Enter Admin Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Access Admin Panel</button>
-    </form>
-    <button type="submit"><a href="vote.html">Vote here</a></button>
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <form id="loginForm">
+            <label for="password">Enter Admin Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Access Admin Panel</button>
+        </form>
+        <button type="submit"><a href="vote.html">Vote here</a></button>
 
-    <div id="errorMessage" class="error-message">Incorrect password. Access denied.</div>
-
+        <div id="errorMessage" class="error-message">Incorrect password. Access denied.</div>
+    </div>
     <script>
         const adminPassword = "admin123"; // Replace with your secure password
 
@@ -43,4 +47,5 @@
         });
     </script>
 </body>
+
 </html>
